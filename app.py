@@ -13,7 +13,7 @@ ps = PorterStemmer()
 
 # misc: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 # virtual env activation: .\venv\Scripts\Activate
-# compilation: streamlit run app.py
+# compilation: python app.py
 
 def transform_text(text):
     text = text.lower()

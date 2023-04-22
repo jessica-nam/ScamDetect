@@ -26,9 +26,9 @@ try {
     console.log('Data:', data);
 
     if (data.result === 1) {
-        resultElement.textContent = 'Spam';
+        resultElement.textContent = 'This message is most likely a SCAM email!';
     } else {
-        resultElement.textContent = 'Not spam';
+        resultElement.textContent = 'This message does not seem like a scam email.';
     }
 } catch (error) {
     console.error('Error:', error);

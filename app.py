@@ -72,6 +72,7 @@ def predict():
     vector_input = tfidf.transform([transformed_sms])
     result = model.predict(vector_input)[0]
     
+    # for debugging
     print("Input SMS:", input_sms, file=sys.stderr)
     print("Transformed SMS:", transformed_sms, file=sys.stderr)
     print("Result:", result, file=sys.stderr)

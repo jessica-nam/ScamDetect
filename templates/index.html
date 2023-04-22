@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sus of a Scam?</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>SUSSY-SCAM</title>
 </head>
 <body>
-    <h1>Sus of a scam?</h1>
-    <form id="predict-form">
-        <input id="input-sms" type="text" placeholder="Copy and paste it here!">
-        <button type="submit">Check</button>
-    </form>
-    <p id="result"></p>
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+        <div class="content"></div>
+            <h1>Are you SUS because of a SCAM?</h1>
+            <h3>What is SUSSY-SCAM and why is it impressive?</h3>
+            <p>SUSSY-SCAM is a cutting-edge tool that uses advanced machine learning algorithms to detect email and SMS scams. With this powerful tool, you can easily copy and paste any suspicious message into the text box and receive an instant analysis of its authenticity.</p>
+            <form id="predict-form">
+                <input id="input-sms" type="text" placeholder="Copy and paste it here!">
+                <button type="submit">Check</button>
+            </form>
+            <p id="result"></p>
+
+            <p>Phishing attacks are a serious threat to individuals and organizations alike. These attacks involve tricking people into providing sensitive information such as login credentials, credit card numbers, or social security numbers. Phishing attacks can lead to identity theft, financial losses, and other serious consequences. It is important to be cautious and vigilant when it comes to suspicious messages, and SUSSY-SCAM is here to help you stay safe.</p>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

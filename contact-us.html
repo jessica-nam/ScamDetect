@@ -15,8 +15,20 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            text-align: center;
+
+        }
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
         }
         .developers {
+            color: #fff;
             display: flex;
             justify-content: space-around;
             width: 80%;
@@ -25,27 +37,58 @@
             text-align: center;
             width: 40%;
             box-sizing: border-box;
+            margin-top: 30px; /* Add this line to create space */
         }
+
         .developer h2 {
+            color: #fff;
             margin-top: 0;
         }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .developer a {
+        color: #fff; /* Change this color to your desired link color */
+        text-decoration: none;
+        }
+        .developer a:hover {
+            color: #ccc; /* Change this color to your desired link hover color */
+        }
+        .developer-image {
+            width: 100px; /* Change this value to adjust the image size */
+            height: 100px; /* Change this value to adjust the image size */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
+    <header>
+        <a href="contact-us.html"></a>
+        <nav>
+            <a href="http://127.0.0.1:5000/">Back to home</a>
+        </nav>
+    </header>
     <div class="developers">
         <div class="developer">
+            <img src="jumpscare.jpg" alt="Jessica Nam" class="developer-image">
             <h2>Jessica Nam</h2>
             <p>Role: Developer</p>
-            <p>Project Contributions: Worked on the machine learning model of the scam email detector and model to web integration.</p>
+            <p>Project Contributions: Developed the core Machine Learning model for phishing detection by utilizing Kaggle datasets and Pandas/Scikit. Also integrated model into web application created with a Python backend and Flask.</p>
             <p>
                 <a href="https://www.linkedin.com/in/jessica-nam-6a760a24b/" target="_blank">LinkedIn</a> | 
                 <a href="https://github.com/jessica-nam" target="_blank">GitHub</a>
             </p>
         </div>
         <div class="developer">
+            <img src="jin.jpg" alt="Jin Park" class="developer-image">
             <h2>Jin Park</h2>
             <p>Role: Developer</p>
-            <p>Project Contributions: Worked on the algorithms for determining the validity of emails and SMS text messages, and functionalities to verify links sent to users.</p>
+            <p>Project Contributions: Implemented additional algorithms for determining the validity of emails and SMS text messages by utilizing the FKGL algorithm. Developed functionalities to verify the links sent to users. </p>
             <p>
                 <a href="https://www.linkedin.com/in/--jinpark--/" target="_blank">LinkedIn</a> | 
                 <a href="https://github.com/val-hir" target="_blank">GitHub</a>

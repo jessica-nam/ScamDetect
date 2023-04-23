@@ -3,21 +3,61 @@ const inputSMS = document.getElementById('input-sms');
 const inputLink = document.getElementById('input-lin');
 const resultLinElement = document.getElementById('liSafe');
 const resultElement = document.getElementById('result');
-const teli = document.getElementById('liTe');
-
 
 predictForm.addEventListener('submit', async (event) => {
+
+    function calculateFKGL(text) {
+        // Tokenize the text into words and sentences
+        const words = text.trim().split(/\s+/);
+        const sentences = text.trim().split(/[.?!]/).filter(Boolean);
+      
+        // Calculate word count, sentence count, and syllable count
+        const wordCount = words.length;
+        const sentenceCount = sentences.length;
+        let syllableCount = 0;
+      
+        words.forEach(word => {
+          syllableCount += countSyllables(word);
+        });
+      
+        // Calculate the FKGL
+        const averageWordsPerSentence = wordCount / sentenceCount;
+        const averageSyllablesPerWord = syllableCount / wordCount;
+        const fkgl = 0.39 * averageWordsPerSentence + 11.8 * averageSyllablesPerWord - 15.59;
+      
+        return fkgl.toFixed(2);
+      }
+      
+      function countSyllables(word) {
+        // Simple syllable counting logic
+        word = word.toLowerCase();
+        if (word.length <= 3) {
+          return 1;
+        }
+        word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+        word = word.replace(/^y/, '');
+        const syllableMatches = word.match(/[aeiouy]{1,2}/g);
+        return syllableMatches ? syllableMatches.length : 0;
+      }
+      
+      // Example usage
+      const text = inputSMS.value;
+      const fkgl = calculateFKGL(text);
+      const gramCh = (fkgl > 0.7)
+      
+    
+    ////////////////
     event.preventDefault();
     console.log('Form submitted');
     
-    try {
-        const response = await fetch('http://127.0.0.1:5000/predict', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ input_sms: inputSMS.value })
-        });
+try {
+    const response = await fetch('http://127.0.0.1:5000/predict', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ input_sms: inputSMS.value })
+    });
 
         console.log('Input SMS:', inputSMS.value);
         console.log('Response received:', response);

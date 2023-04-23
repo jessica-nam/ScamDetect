@@ -4,24 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <title>SUSSY-SCAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>GoPhish</title>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
-        <div class="content"></div>
-            <h1>Are you SUS because of a SCAM?</h1>
-            <h3>What is SUSSY-SCAM and why is it impressive?</h3>
-            <p>SUSSY-SCAM is a cutting-edge tool that uses advanced machine learning algorithms to detect email and SMS scams. With this powerful tool, you can easily copy and paste any suspicious message into the text box and receive an instant analysis of its authenticity.</p>
-            <form id="predict-form">
-                <input id="input-sms" type="text" placeholder="Copy and paste it here!">
-                <input id="input-lin" type="text" placeholder="Copy and paste it here!">
+        <!-- Tab section with buttons -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="http://127.0.0.1:5500/our-mission.html">Our Mission</a>
+            <a href="http://127.0.0.1:5500/contact-us.html">Contact Us</a>
+        </nav>
+        
+    </div>
+    <div class="container">
+        <div class="content">
+            
+            <h1>Is that email a little... phishy?</h1>
+            <h3>What is GoPhish and why is it impressive?</h3>
+            <p>GoPhish is a cutting-edge tool that uses advanced machine learning algorithms and natural language processing to detect email and SMS scams. With this powerful tool, you can easily copy and paste any suspicious message into the text box and receive an instant analysis of its authenticity.</p>
+            <form id="predict-form" class="form-container">
+                <div class="input-group">
+                    <div class="input-container">
+                        <label for="input-lin">URL Link:</label>
+                        <input id="input-lin" type="text" placeholder="Copy and paste it here!">
+                    </div>
+                    <div class="input-container">
+                        <label for="input-sms">Email Message:</label>
+                        <textarea id="input-sms" rows="4" placeholder="Copy and paste it here!"></textarea>
+                    </div>
+                </div>
                 <button type="submit">Check</button>
             </form>
+            
+            
+            
             <p id="liSafe"></p>
             <p id="result"></p>
+            <p> </p>
+            <p> </p>
+            <div class="flip-card-container">
 
-            <p>Phishing attacks are a serious threat to individuals and organizations alike. These attacks involve tricking people into providing sensitive information such as login credentials, credit card numbers, or social security numbers. Phishing attacks can lead to identity theft, financial losses, and other serious consequences. It is important to be cautious and vigilant when it comes to suspicious messages, and SUSSY-SCAM is here to help you stay safe.</p>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <h2>LA Hacks Project Track: Operation Safe and Sound</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <p>Your mission, should you choose to accept it: Protect your home. Battle the hackers, hold off the intruders, and keep the hazards at bay. Projects in this track will tackle all things privacy and security. Stay safe, agents! Over and out.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>What is phishing? Why is it dangerous?</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Phishing attacks are a serious threat to individuals and organizations alike. These attacks involve tricking people into providing sensitive information such as login credentials, credit card numbers, or social security numbers.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>How did we do it?</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>This project is a machine learning web app that can instantly detect phishing emails with high accuracy. It was created using a trained dataset and a combination of algorithms, including a grammar evaluator. Contact us for more details!</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
         </div>
     </div>
 

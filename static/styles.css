@@ -1,9 +1,47 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto Condensed';
     background-image: url("website.jpg");
     background-size: cover;
     margin: 0;
     padding: 0;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px;
+}
+
+.logo {
+    display: inline-block;
+    width: 275px; /* Adjust this value to make the logo smaller or larger */
+    height: auto;
+    margin: 10px 10px 0 25px; /* Add some left margin to move the logo to the right */
+}
+
+/* Tab section styles */
+nav {
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Roboto Condensed', cursive; /* Add this line to use Squada One font */
+    font-size: 1.5em;
+    margin-left: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+
+nav a:hover {
+    color: #69A9D5;
 }
 
 .container {
@@ -12,32 +50,31 @@ body {
     padding: 20px;
     background-color: transparent;
     background-size: cover;
-}
-
-.logo {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
+    display: flex;
+    justify-content: flex-start; /* Add this line to align the content to the left side */
 }
 
 .content {
     flex: 1;
     max-width: 900px;
-    margin: 40px auto;
+    margin: 150px auto; /* Increase the margin-top value to lower the position */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    display: flex; /* Add this line to center the content */
+    flex-direction: column; /* Add this line to center the content */
+    align-items: center; /* Add this line to center the content */
+    justify-content: center; /* Add this line to center the content */
 }
+
 
 h1 {
     color: #ffffff;
-    font-size: 2.5em;
+    font-size: 3.5em;
 }
 
 h3 {
     color: #ffffff;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 p {
@@ -46,10 +83,14 @@ p {
     line-height: 1.6;
 }
 
-form {
+.form-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
+
+
 
 #input-sms {
     flex: 1;
@@ -61,15 +102,121 @@ form {
 }
 
 button {
-    padding: 8px 15px;
+    padding: 10px 20px; /* Adjust the padding values to make the button a normal rectangle size */
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 0 3px 3px 0;
+    border-radius: 3px; /* Adjust the border-radius to make the button corners less rounded */
     font-size: 1em;
     cursor: pointer;
+    margin-top: 10px; /* Adjust the margin-top value to position the button below the email message text box */
 }
+
 
 button:hover {
     background-color: #0056b3;
 }
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Add this line to stack the input boxes vertically */
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 20px; /* Add some margin to separate the input boxes */
+}
+
+textarea {
+    width: 300px; /* Set the width of the email message text box */
+    box-sizing: border-box; /* This ensures the input width includes padding and border */
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+
+label {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 300px; /* Set the width of both text boxes to the same size */
+    box-sizing: border-box; /* This ensures the input width includes padding and border */
+}
+/* Other styles */
+.flip-card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 100px;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+
+  }
+  
+  .flip-card-front {
+    background-color: #ffffff7e;
+    color: black;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .flip-card-back {
+    background-color: #69aad550;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  
+  /* Other styles */
+  

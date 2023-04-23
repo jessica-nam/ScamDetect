@@ -8,6 +8,7 @@ predictForm.addEventListener('submit', async (event) => {
 
     function calculateFKGL(text) {
         // Tokenize the text into words and sentences
+        console.log(text)
         const words = text.trim().split(/\s+/);
         const sentences = text.trim().split(/[.?!]/).filter(Boolean);
       
@@ -20,10 +21,10 @@ predictForm.addEventListener('submit', async (event) => {
           syllableCount += countSyllables(word);
         });
       
-        // Calculate the FKGL
+        // Calculate the FKGL *Flesch-Kincaid Grade Level*
         const averageWordsPerSentence = wordCount / sentenceCount;
         const averageSyllablesPerWord = syllableCount / wordCount;
-        const fkgl = 0.39 * averageWordsPerSentence + 11.8 * averageSyllablesPerWord - 15.59;
+        const fkgl = 206.835 - (1.015 * averageWordsPerSentence) - (84.6 * averageSyllablesPerWord);
       
         return fkgl.toFixed(2);
       }
@@ -43,8 +44,8 @@ predictForm.addEventListener('submit', async (event) => {
       // Example usage
       const text = inputSMS.value;
       const fkgl = calculateFKGL(text);
-      const gramCh = (fkgl > 0.7)
-      
+      const gramCh = (fkgl < 80)
+      console.log(fkgl)
     
     ////////////////
     event.preventDefault();
